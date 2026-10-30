@@ -1,0 +1,10 @@
+Place the Windows build of upgrade_client here:
+  upgrade_client_static.lib   (static archive)
+  upgrade_client.lib          (import library for the DLL)
+  upgrade_client.dll          (shared library)
+
+Build them on a Windows agent:
+  cmake -S ..\..\..\rm_upgrade -B ..\..\..\rm_upgrade\build -A x64 -DUPGRADE_ENABLE_HTTPS=OFF
+  cmake --build ..\..\..\rm_upgrade\build --config Release
+then copy the resulting .lib/.dll from rm_upgrade\build (and its Release\ subdir)
+into this folder.
